@@ -1,0 +1,112 @@
+.navbar {
+    width: 100%;
+}
+
+.parallax {
+    background-image: url('imgs/bush.jpeg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+}
+
+.parallax h1 {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    
+    border-radius: 10px;
+}
+
+h5 {
+    font-family: "silver-northern";
+
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(122, 113, 115);
+}
+
+.btn {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+}
+
+
+.navbar-nav a {
+    font-family: "silver-northern", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    text-align: center;
+    color: rgb(241, 95, 120);
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+nav a {
+    font-family: "silver-northern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    position: relative;
+    text-decoration: none;
+    color: rgb(241, 95, 120);
+}
+
+
+nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+}
+
+nav div {
+    display: inline;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.waviy {
+    position: relative;
+}
+
+h1 {
+    font-family: "aptly-medium-shadow", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 100px;
+    color: rgb(241, 95, 120);
+}
+
+.sub-title {
+    font-family: "aptly-medium-shadow", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 60px;
+    color: rgb(241, 95, 120)
+}
