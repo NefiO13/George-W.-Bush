@@ -45,7 +45,7 @@ body {
     font-size: 30px;
     font-style: normal;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(77, 70, 70);
 }
 
 .navbar-brand {
@@ -60,7 +60,7 @@ nav a {
     font-size: 30px;
     position: relative;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(87, 79, 79);
 }
 
 
@@ -95,7 +95,7 @@ nav div {
     position: relative;
 }
 
-h1 {
+h1.lead {
     font-family: "aptly-medium-shadow", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -108,5 +108,5 @@ h1 {
     font-weight: 500;
     font-style: normal;
     font-size: 300px;
-    color: rgb(3, 3, 3)
+    color: rgb(255, 255, 255)
 }
