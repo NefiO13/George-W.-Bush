@@ -1,0 +1,624 @@
+.navbar {
+    width: 100%;
+}
+
+h5 {
+    font-family: "silver-northern";
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(122, 113, 115);
+}
+
+
+
+
+.navbar-nav a {
+    font-family: "silver-northern", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    text-align: center;
+    color: rgb(77, 70, 70);
+}
+
+.navbar-brand {
+    margin-left: 20px;
+    font-size: 50px;
+
+}
+
+nav a {
+    font-family: "silver-northern", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    position: relative;
+    text-decoration: none;
+    color: rgb(87, 79, 79);
+}
+
+
+nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    bottom: 0;
+    background-color: #000000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+}
+
+nav div {
+    display: inline;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.waviy {
+    position: relative;
+}
+
+
+
+
+:root {
+    /* Play with variables to customize them */
+    --card-width: 16rem;
+    --card-height: 16rem;
+
+    --card-bg-1: white;
+    --card-head-bg-1: white;
+    --card-head-title-1: black;
+    --card-border-1: #f33784;
+
+    --card-bg-2: #44af69;
+    --card-text-shadow-2: #2a2b63;
+    --card-text-shadow-2-alt: #2b6940;
+    --card-head-title-2: white;
+    --card-bg-2-alt: #414288;
+
+    --card-bg-3: #5bc3eb;
+    --card-text-shadow-3: #dfdedb;
+    --card-text-shadow-3-alt: #95d4f5;
+    --card-head-title-3: black;
+    --card-bg-3-alt: #000000;
+
+    --card-bg-4: #44af69;
+    /*Might be rgba for transparency*/
+    --card-text-shadow-4: #2a2b63;
+    --card-head-title-4: white;
+    --card-footer-color-4: #2B9EB3;
+
+    --card-arrow-h: calc(var(--card-height) / 2);
+    --card-arrow-w: calc(var(--card-height) / 2);
+    --card-bg-5: #080705;
+    --card-text-shadow-5: #414288;
+    --card-head-title-5: white;
+    --card-footer-color-5: #2B9EB3;
+    --card-dir-bg: #6B0F1A;
+    --card-dir-font: white;
+    --card-dir-text-shadow: #450a11;
+}
+
+body {
+    background: #887863;
+        margin-top: 10%;
+}
+
+div.container {
+    height: auto;
+    padding: 1em 0;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    overflow: auto;
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--card-width) + 1rem), 1fr));
+    row-gap: 50px;
+}
+
+/* CARD GENERIC CSS */
+
+.card {
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    perspective: 1000px;
+}
+
+.card-inner {
+    height: var(--card-height);
+    width: var(--card-width);
+    margin: 1rem;
+}
+
+.card-header {
+    padding: 1rem 1rem;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.card-header h2 {
+    display: inline-block;
+    margin: 0;
+}
+
+.card-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-body p {
+    
+    margin: 0.5em;
+    transition: left 0.5s ease, right 0.5s ease;
+}
+
+.card-footer {
+    padding: 1rem;
+}
+
+/* CARD 1 SPECIFIC CSS */
+
+.card-1 {
+    background: var(--card-bg-1);
+    border: 1px solid var(--card-border-1);
+    margin: 1rem;
+    height: var(--card-height);
+    width: var(--card-width);
+}
+
+.card-1 .card-header {
+    background: var(--card-head-bg-1);
+    color: var(--card-head-title-1);
+}
+
+.card-1 .card-body .initial {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.card-1 .card-body .final {
+    position: absolute;
+    top: 0;
+    left: 1000px;
+}
+
+.card.card-1:hover {
+    background: var(--card-border-1);
+    color: var(--card-bg-1);
+    cursor: pointer;
+}
+
+.card.card-1:hover .card-header {
+    background: var(--card-border-1);
+    color: var(--card-bg-1);
+}
+
+.card.card-1:hover .card-body .final {
+    left: 0px;
+    position: relative;
+}
+
+.card.card-1:hover .card-body .initial {
+    position: absolute;
+    right: 1000px;
+    top: 0px;
+}
+
+/* CARD 2 SPECIFIC CSS */
+
+.card.card-2 {
+    overflow: hidden;
+    box-shadow: none;
+    transform-style: preserve-3d;
+}
+
+.card.card-2:hover {
+    cursor: pointer;
+}
+
+.card.card-2:hover .card-inner {
+    transform: rotateY(360deg);
+    background: var(--card-bg-2);
+    text-shadow: 0px 2px var(--card-text-shadow-2-alt);
+}
+
+.card.card-2 .card-inner {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    background: var(--card-bg-2-alt);
+    color: var(--card-head-title-2);
+    text-shadow: 0px 2px var(--card-text-shadow-2);
+    transition: all 0.5s ease;
+}
+
+.card.card-2:hover .card-body .initial {
+    transform: rotateY(180deg);
+}
+
+.card.card-2:hover .card-body .final {
+    transform: rotateY(0deg);
+}
+
+.card.card-2 .card-header {
+    backface-visibility: hidden;
+    transition: text-shadow 0s ease;
+}
+
+.card.card-2 .card-body {
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.card-2 .card-body .initial,
+.card-2 .card-body .final {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform 0s ease;
+    transition-delay: 0.2s;
+}
+
+.card-2 .card-body .final {
+    transform: rotateY(180deg);
+}
+
+/* CARD 3 SPECIFIC CSS */
+
+.card.card-3 {
+    overflow: hidden;
+    box-shadow: none;
+    transform-style: preserve-3d;
+}
+
+.card.card-3:hover {
+    cursor: pointer;
+}
+
+.card.card-3:hover .card-inner {
+    transform: rotateX(360deg);
+    background: var(--card-bg-3);
+    text-shadow: 0px 2px var(--card-text-shadow-3-alt);
+}
+
+.card.card-3 .card-inner {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    background: var(--card-bg-3-alt);
+    color: var(--card-head-title-3);
+    text-shadow: 0px 2px var(--card-text-shadow-3);
+    transition: all 0.5s ease;
+}
+
+.card.card-3:hover .card-body .initial {
+    transform: rotateX(180deg);
+}
+
+.card.card-3:hover .card-body .final {
+    transform: rotateX(0deg);
+}
+
+.card.card-3 .card-header {
+    backface-visibility: hidden;
+    transition: text-shadow 0s ease;
+}
+
+.card.card-3 .card-body {
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.card-3 .card-body .initial,
+.card-3 .card-body .final {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform 0s ease;
+    transition-delay: 0.2s;
+}
+
+.card-3 .card-body .final {
+    transform: rotateX(180deg);
+}
+
+/* CARD 4 SPECIFIC CSS */
+
+/* CARD 3 SPECIFIC CSS */
+
+.card.card-4 {
+    overflow: hidden;
+    box-shadow: none;
+    transform-style: preserve-3d;
+    height: var(--card-height);
+    width: var(--card-width);
+    margin: 1rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    background: var(--card-head-title-4);
+    border: 1px solid var(--card-footer-color-4);
+}
+
+.card.card-4>img {
+    position: absolute;
+    top: 0px;
+    height: var(--card-height);
+    width: var(--card-width);
+}
+
+.card.card-4:hover {
+    cursor: pointer;
+}
+
+.card.card-4:hover .card-overlay {
+    height: 100%;
+    animation: moveup 0.4s ease;
+}
+
+.card.card-4:hover .card-body {
+    right: 0px;
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+}
+
+.card.card-4:hover .card-footer {
+    left: 0px;
+    transition: all 0.3s ease;
+    transition-delay: 0.5s;
+}
+
+.card.card-4 .card-overlay {
+    transform-style: preserve-3d;
+    background: var(--card-bg-4);
+    color: var(--card-head-title-4);
+    text-shadow: 0px 2px var(--card-text-shadow-4);
+    height: 3rem;
+    position: absolute;
+    bottom: 0px;
+    border-top: 1px solid var(--card-footer-color-4);
+    animation: movedown 0.5s ease;
+}
+
+.card.card-4 .card-header {
+    transition: text-shadow 0s ease;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.card.card-4 .card-body {
+    overflow: hidden;
+    right: calc(-1 * var(--card-width));
+    position: relative;
+}
+
+.card.card-4 .card-footer {
+    margin: auto;
+    left: calc(-1 * var(--card-width));
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.card.card-4 .card-footer a.tag {
+    background-color: var(--card-footer-color-4);
+    min-width: 3em;
+    display: inline-block;
+    padding: 0.1rem 0.3em;
+    text-shadow: 0px 1px black;
+    border-radius: 5px;
+    margin: 0.1rem 0.2rem;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    color: var(--card-head-title-4);
+    font-size: 0.9em;
+}
+
+.card.card-4 .card-footer a.tag:hover {
+    background-color: var(--card-head-title-4);
+    color: var(--card-footer-color-4);
+    text-shadow: 0px 1px white;
+}
+
+@keyframes moveup {
+    from {
+        top: calc(var(--card-height) - 3rem);
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes movedown {
+    from {
+        top: 0;
+        height: var(--card-height);
+    }
+
+    to {
+        top: calc(var(--card-height) - 3rem);
+        height: var(--card-height);
+    }
+}
+
+/* CARD 5 SPECIFIC CSS */
+
+.card.card-5 {
+    overflow: hidden;
+    box-shadow: none;
+    transform-style: preserve-3d;
+}
+
+.card.card-5 .card-inner {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    background: var(--card-bg-5);
+    color: var(--card-head-title-5);
+    text-shadow: 0px 2px var(--card-text-shadow-5);
+    transition: all 0.5s ease;
+}
+
+.card.card-5:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.card.card-5:hover .card-overlay .dir {
+    border-width: 0 !important;
+}
+
+.card.card-5:hover .card-overlay .dir.up {
+    left: 8rem;
+    bottom: -8rem;
+}
+
+.card.card-5:hover .card-overlay .dir.down {
+    left: 8rem;
+    top: -8rem;
+}
+
+.card.card-5:hover .card-overlay .dir.left {
+    right: -8rem;
+    top: 8rem;
+}
+
+.card.card-5:hover .card-overlay .dir.right {
+    left: -8rem;
+    top: 8rem;
+}
+
+.card.card-5:hover .card-overlay .card-top {
+    animation: in 0.6s;
+    opacity: 0;
+}
+
+
+.card.card-5 .card-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: var(--card-height);
+    width: var(--card-width);
+    margin: 1rem;
+    overflow: hidden;
+}
+
+.card.card-5 .dir {
+    transition: all 0.5s linear;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.card.card-5 .card-overlay .up {
+    border-left: var(--card-arrow-h) solid transparent;
+    border-right: var(--card-arrow-h) solid transparent;
+    border-bottom: var(--card-arrow-h) solid var(--card-dir-bg);
+    bottom: 0;
+    left: 0;
+}
+
+.card.card-5 .card-overlay .down {
+    border-left: var(--card-arrow-h) solid transparent;
+    border-right: var(--card-arrow-h) solid transparent;
+    border-top: var(--card-arrow-h) solid var(--card-dir-bg);
+    top: 0;
+    left: 0;
+}
+
+.card.card-5 .card-overlay .left {
+    border-top: var(--card-arrow-h) solid transparent;
+    border-bottom: var(--card-arrow-h) solid transparent;
+    border-right: var(--card-arrow-h) solid var(--card-dir-bg);
+    top: 0;
+    right: 0;
+}
+
+.card.card-5 .card-overlay .right {
+    border-top: var(--card-arrow-h) solid transparent;
+    border-bottom: var(--card-arrow-h) solid transparent;
+    border-left: var(--card-arrow-h) solid var(--card-dir-bg);
+    top: 0;
+    left: 0;
+}
+
+.card.card-5 .card-overlay .card-top {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--card-dir-bg);
+    transition: all 0.5 linear;
+    animation: out 0.6s;
+    opacity: 1;
+    color: var(--card-dir-font);
+    text-shadow: 0 2px var(--card-dir-text-shadow);
+}
+
+.card.card-5 .card-header {
+    backface-visibility: hidden;
+    transition: text-shadow 0s ease;
+}
+
+.card.card-5 .card-body {
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+@keyframes out {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes in {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
