@@ -4,6 +4,11 @@ h5 {
     font-style: normal;
 }
 
+.card-title{font-family: "oso-sans-variable",
+sans-serif;
+font-variation-settings: "wdth" 70,
+"wght" 200;
+}
 body {
     background-color: rgb(122, 113, 115);
     margin-top: 10%;
