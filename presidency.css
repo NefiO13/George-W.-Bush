@@ -115,13 +115,12 @@ nav div {
 }
 
 body {
-    background-image: url('imgs/president-george-hw-bush-in-oval-office-1989-war-is-hell-store.jpg');
-    background-repeat: no-repeat;
-        position: absolute;
+    background: #887863;
+        margin-top: 10%;
 }
 
 div.container {
-    height: 10%;
+    height: auto;
     padding: 1em 0;
     width: 100%;
     display: grid;
